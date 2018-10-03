@@ -546,9 +546,10 @@ class Tags(object):
 
             >>> for tag in abjad.tags.music_annotation_tags():
             ...     tag
-            ...
             'CLOCK_TIME_MARKUP'
             'FIGURE_NAME_MARKUP'
+            'LOCAL_MEASURE_INDEX_MARKUP'
+            'LOCAL_MEASURE_NUMBER_MARKUP'
             'MEASURE_NUMBER_MARKUP'
             'SPACING_MARKUP'
             'SPACING_OVERRIDE_MARKUP'
@@ -558,6 +559,8 @@ class Tags(object):
         return [
             self.CLOCK_TIME_MARKUP,
             self.FIGURE_NAME_MARKUP,
+            self.LOCAL_MEASURE_INDEX_MARKUP,
+            self.LOCAL_MEASURE_NUMBER_MARKUP,
             self.MEASURE_NUMBER_MARKUP,
             self.SPACING_MARKUP,
             self.SPACING_OVERRIDE_MARKUP,

@@ -296,6 +296,23 @@ class Tags(object):
 
         ..  container:: example
 
+            Segments:
+
+            >>> path = abjad.Path('etude', 'segments')
+            >>> for tag in abjad.tags.clef_color_tags(path=path):
+            ...     tag
+            ...
+            'DEFAULT_CLEF_COLOR'
+            'DEFAULT_CLEF_REDRAW_COLOR'
+            'EXPLICIT_CLEF_COLOR'
+            'EXPLICIT_CLEF_REDRAW_COLOR'
+            'REAPPLIED_CLEF_COLOR'
+            'REAPPLIED_CLEF_REDRAW_COLOR'
+            'REDUNDANT_CLEF_COLOR'
+            'REDUNDANT_CLEF_REDRAW_COLOR'
+
+        ..  container:: example
+
             Build:
 
             >>> path = abjad.Path('etude', 'builds', 'letter-score')
@@ -323,7 +340,7 @@ class Tags(object):
             self.REDUNDANT_CLEF_COLOR,
             self.REDUNDANT_CLEF_REDRAW_COLOR,
             ]
-        if path and not path.is_segment():
+        if path and not path.is_segment() and not path.is_segments():
             tags.append(self.REAPPLIED_CLEF)
         return tags
 
@@ -665,6 +682,63 @@ class Tags(object):
             'EXPLICIT_TIME_SIGNATURE_COLOR'
             'REAPPLIED_TIME_SIGNATURE_COLOR'
             'REDUNDANT_TIME_SIGNATURE_COLOR'
+
+        ..  container:: example
+
+            Segments:
+
+            >>> path = abjad.Path('etude', 'segments')
+            >>> tags = abjad.tags.persistent_indicator_color_expression_tags(path)
+            >>> for tag in tags:
+            ...     tag
+            ...
+            'DEFAULT_CLEF_COLOR'
+            'DEFAULT_CLEF_REDRAW_COLOR'
+            'EXPLICIT_CLEF_COLOR'
+            'EXPLICIT_CLEF_REDRAW_COLOR'
+            'REAPPLIED_CLEF_COLOR'
+            'REAPPLIED_CLEF_REDRAW_COLOR'
+            'REDUNDANT_CLEF_COLOR'
+            'REDUNDANT_CLEF_REDRAW_COLOR'
+            'EXPLICIT_DYNAMIC_COLOR'
+            'REAPPLIED_DYNAMIC'
+            'REAPPLIED_DYNAMIC_COLOR'
+            'REDUNDANT_DYNAMIC_COLOR'
+            'DEFAULT_INSTRUMENT_ALERT'
+            'DEFAULT_INSTRUMENT_COLOR'
+            'REDRAWN_DEFAULT_INSTRUMENT_COLOR'
+            'EXPLICIT_INSTRUMENT_ALERT'
+            'EXPLICIT_INSTRUMENT_COLOR'
+            'REAPPLIED_INSTRUMENT_COLOR'
+            'REAPPLIED_INSTRUMENT_ALERT'
+            'REDRAWN_EXPLICIT_INSTRUMENT_COLOR'
+            'REDRAWN_REAPPLIED_INSTRUMENT_COLOR'
+            'REDUNDANT_INSTRUMENT_ALERT'
+            'REDUNDANT_INSTRUMENT_COLOR'
+            'REDRAWN_REDUNDANT_INSTRUMENT_COLOR'
+            'DEFAULT_MARGIN_MARKUP_ALERT'
+            'DEFAULT_MARGIN_MARKUP_COLOR'
+            'REDRAWN_DEFAULT_MARGIN_MARKUP_COLOR'
+            'EXPLICIT_MARGIN_MARKUP_ALERT'
+            'EXPLICIT_MARGIN_MARKUP_COLOR'
+            'REAPPLIED_MARGIN_MARKUP_ALERT'
+            'REAPPLIED_MARGIN_MARKUP_COLOR'
+            'REDRAWN_EXPLICIT_MARGIN_MARKUP_COLOR'
+            'REDRAWN_REAPPLIED_MARGIN_MARKUP_COLOR'
+            'REDUNDANT_MARGIN_MARKUP_ALERT'
+            'REDUNDANT_MARGIN_MARKUP_COLOR'
+            'REDRAWN_REDUNDANT_MARGIN_MARKUP_COLOR'
+            'EXPLICIT_METRONOME_MARK_WITH_COLOR'
+            'REAPPLIED_METRONOME_MARK_WITH_COLOR'
+            'REDUNDANT_METRONOME_MARK_WITH_COLOR'
+            'EXPLICIT_STAFF_LINES_COLOR'
+            'REAPPLIED_STAFF_LINES_COLOR'
+            'REDUNDANT_STAFF_LINES_COLOR'
+            'REAPPLIED_STAFF_LINES'
+            'EXPLICIT_TIME_SIGNATURE_COLOR'
+            'REAPPLIED_TIME_SIGNATURE_COLOR'
+            'REDUNDANT_TIME_SIGNATURE_COLOR'
+            'REAPPLIED_TIME_SIGNATURE'
 
         ..  container:: example
 

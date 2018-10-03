@@ -97,21 +97,12 @@ class Tags(object):
 
         'EXPLICIT_DYNAMIC',
         'EXPLICIT_DYNAMIC_COLOR',
-        # TODO: remove these two:
-        'EXPLICIT_DYNAMIC_COLOR_CANCELLATION',
-        'EXPLICIT_DYNAMIC_REDRAW_COLOR',
 
         'REAPPLIED_DYNAMIC',
         'REAPPLIED_DYNAMIC_COLOR',
-        # TODO: remove these two:
-        'REAPPLIED_DYNAMIC_COLOR_CANCELLATION',
-        'REAPPLIED_DYNAMIC_REDRAW_COLOR',
 
         'REDUNDANT_DYNAMIC',
         'REDUNDANT_DYNAMIC_COLOR',
-        # TODO: remove these two:
-        'REDUNDANT_DYNAMIC_COLOR_CANCELLATION',
-        'REDUNDANT_DYNAMIC_REDRAW_COLOR',
 
         ### FIGURES ###
 
@@ -374,23 +365,17 @@ class Tags(object):
             ...     tag
             ...
             'EXPLICIT_DYNAMIC_COLOR'
-            'EXPLICIT_DYNAMIC_REDRAW_COLOR'
             'REAPPLIED_DYNAMIC'
             'REAPPLIED_DYNAMIC_COLOR'
-            'REAPPLIED_DYNAMIC_REDRAW_COLOR'
             'REDUNDANT_DYNAMIC_COLOR'
-            'REDUNDANT_DYNAMIC_REDRAW_COLOR'
 
         Ignores ``path``.
         """
         return [
             self.EXPLICIT_DYNAMIC_COLOR,
-            self.EXPLICIT_DYNAMIC_REDRAW_COLOR,
             self.REAPPLIED_DYNAMIC,
             self.REAPPLIED_DYNAMIC_COLOR,
-            self.REAPPLIED_DYNAMIC_REDRAW_COLOR,
             self.REDUNDANT_DYNAMIC_COLOR,
-            self.REDUNDANT_DYNAMIC_REDRAW_COLOR,
             ]
 
     def instrument_color_tags(self, path=None) -> typing.List[str]:
@@ -589,12 +574,9 @@ class Tags(object):
             'REDUNDANT_CLEF_COLOR'
             'REDUNDANT_CLEF_REDRAW_COLOR'
             'EXPLICIT_DYNAMIC_COLOR'
-            'EXPLICIT_DYNAMIC_REDRAW_COLOR'
             'REAPPLIED_DYNAMIC'
             'REAPPLIED_DYNAMIC_COLOR'
-            'REAPPLIED_DYNAMIC_REDRAW_COLOR'
             'REDUNDANT_DYNAMIC_COLOR'
-            'REDUNDANT_DYNAMIC_REDRAW_COLOR'
             'DEFAULT_INSTRUMENT_ALERT'
             'DEFAULT_INSTRUMENT_COLOR'
             'REDRAWN_DEFAULT_INSTRUMENT_COLOR'
@@ -647,12 +629,9 @@ class Tags(object):
             'REDUNDANT_CLEF_COLOR'
             'REDUNDANT_CLEF_REDRAW_COLOR'
             'EXPLICIT_DYNAMIC_COLOR'
-            'EXPLICIT_DYNAMIC_REDRAW_COLOR'
             'REAPPLIED_DYNAMIC'
             'REAPPLIED_DYNAMIC_COLOR'
-            'REAPPLIED_DYNAMIC_REDRAW_COLOR'
             'REDUNDANT_DYNAMIC_COLOR'
-            'REDUNDANT_DYNAMIC_REDRAW_COLOR'
             'DEFAULT_INSTRUMENT_ALERT'
             'DEFAULT_INSTRUMENT_COLOR'
             'REDRAWN_DEFAULT_INSTRUMENT_COLOR'
@@ -706,12 +685,9 @@ class Tags(object):
             'REDUNDANT_CLEF_REDRAW_COLOR'
             'REAPPLIED_CLEF'
             'EXPLICIT_DYNAMIC_COLOR'
-            'EXPLICIT_DYNAMIC_REDRAW_COLOR'
             'REAPPLIED_DYNAMIC'
             'REAPPLIED_DYNAMIC_COLOR'
-            'REAPPLIED_DYNAMIC_REDRAW_COLOR'
             'REDUNDANT_DYNAMIC_COLOR'
-            'REDUNDANT_DYNAMIC_REDRAW_COLOR'
             'DEFAULT_INSTRUMENT_ALERT'
             'DEFAULT_INSTRUMENT_COLOR'
             'REDRAWN_DEFAULT_INSTRUMENT_COLOR'

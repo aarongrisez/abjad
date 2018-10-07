@@ -744,12 +744,12 @@ class Dynamic(object):
             Without leaked stop dynamic:
 
             >>> staff = abjad.Staff("c'4 d' e' r")
-            >>> start = abjad.Dynamic('mf')
-            >>> hairpin = abjad.HairpinIndicator('>')
-            >>> stop = abjad.Dynamic('pp')
-            >>> abjad.attach(start, staff[0])
-            >>> abjad.attach(hairpin, staff[0])
-            >>> abjad.attach(stop, staff[-2])
+            >>> start_dynamic = abjad.Dynamic('mf')
+            >>> start_hairpin = abjad.StartHairpin('>')
+            >>> stop_dynamic = abjad.Dynamic('pp')
+            >>> abjad.attach(start_dynamic, staff[0])
+            >>> abjad.attach(start_hairpin, staff[0])
+            >>> abjad.attach(stop_dynamic, staff[-2])
             >>> abjad.override(staff).dynamic_line_spanner.staff_padding = 4
             >>> abjad.show(staff) # doctest: +SKIP
 
@@ -774,12 +774,12 @@ class Dynamic(object):
             With leaked stop dynamic:
 
             >>> staff = abjad.Staff("c'4 d' e' r")
-            >>> start = abjad.Dynamic('mf')
-            >>> hairpin = abjad.HairpinIndicator('>')
-            >>> stop = abjad.Dynamic('pp', leak=True)
-            >>> abjad.attach(start, staff[0])
-            >>> abjad.attach(hairpin, staff[0])
-            >>> abjad.attach(stop, staff[-2])
+            >>> start_dynamic = abjad.Dynamic('mf')
+            >>> start_hairpin = abjad.StartHairpin('>')
+            >>> stop_dynamic = abjad.Dynamic('pp', leak=True)
+            >>> abjad.attach(start_dynamic, staff[0])
+            >>> abjad.attach(start_hairpin, staff[0])
+            >>> abjad.attach(stop_dynamic, staff[-2])
             >>> abjad.override(staff).dynamic_line_spanner.staff_padding = 4
             >>> abjad.show(staff) # doctest: +SKIP
 
@@ -806,12 +806,12 @@ class Dynamic(object):
             Leaks format after spanners:
 
             >>> staff = abjad.Staff("c'8 [ d' e' ] f'")
-            >>> start = abjad.Dynamic('mf')
-            >>> hairpin = abjad.HairpinIndicator('>')
-            >>> stop = abjad.Dynamic('pp', leak=True)
-            >>> abjad.attach(start, staff[0])
-            >>> abjad.attach(hairpin, staff[0])
-            >>> abjad.attach(stop, staff[-2])
+            >>> start_dynamic = abjad.Dynamic('mf')
+            >>> start_hairpin = abjad.StartHairpin('>')
+            >>> stop_dynamic = abjad.Dynamic('pp', leak=True)
+            >>> abjad.attach(start_dynamic, staff[0])
+            >>> abjad.attach(start_hairpin, staff[0])
+            >>> abjad.attach(stop_dynamic, staff[-2])
             >>> abjad.override(staff).dynamic_line_spanner.staff_padding = 4
             >>> abjad.show(staff) # doctest: +SKIP
 

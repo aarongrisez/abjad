@@ -108,6 +108,15 @@ class Dynamic(object):
         (Note("a'8"), Dynamic('f'))
         (Note("c'2"), Dynamic('mf'))
 
+    ..  container:: example exception
+
+        Errors on nondynamic input:
+
+        >>> abjad.Dynamic('text')
+        Traceback (most recent call last):
+            ...
+        Exception: the letter 't' (in 'text') is not a dynamic.
+
     """
 
     ### CLASS VARIABLES ###
@@ -250,7 +259,10 @@ class Dynamic(object):
             name_is_textual = True
         if not name_is_textual:
             for letter in name_.strip('"'):
-                assert letter in self._lilypond_dynamic_alphabet, repr(name_)
+                if letter not in self._lilypond_dynamic_alphabet:
+                    message = f'the letter {letter!r} (in {name!r})'
+                    message += ' is not a dynamic.' 
+                    raise Exception(message)
         self._name = name_
         if command is not None:
             assert isinstance(command, str), repr(command)

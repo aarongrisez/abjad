@@ -720,3 +720,25 @@ class Job(object):
                 path=path,
                 title=f'showing {name} ...',
                 )
+
+    @staticmethod
+    def show_tag(path, tag, undo=False) -> 'Job':
+        """
+        Shows tag.
+        """
+        name = tag
+        def match(tags) -> bool:
+            tags_ = [tag]
+            return bool(set(tags) & set(tags_))
+        if undo:
+            return Job(
+                deactivate=(match, name),
+                path=path,
+                title=f'hiding {name} ...',
+                )
+        else:
+            return Job(
+                activate=(match, name),
+                path=path,
+                title=f'showing {name} ...',
+                )
